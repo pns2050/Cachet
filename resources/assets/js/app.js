@@ -27,6 +27,8 @@ window.axios.defaults.headers.common = {
      * or customize the JavaScript scaffolding to fit your unique needs.
      */
 
+    Vue.component('fetch-data', require('./components/FetchData'));
+
     new Vue({
         el: '#app',
         data () {
@@ -44,9 +46,7 @@ window.axios.defaults.headers.common = {
         components: {
             'setup': require('./components/Setup'),
             'dashboard': require('./components/dashboard/Dashboard'),
-            'report-incident': require('./components/dashboard/ReportIncident'),
-            'invite-team': require('./components/dashboard/InviteTeam'),
             'metric-chart': require('./components/status-page/Metric'),
         }
-    })
+    });
 })()

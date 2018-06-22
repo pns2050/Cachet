@@ -13,7 +13,7 @@
             <div class="col-sm-12">
                 <form id="settings-form" name="SettingsForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.settings', [], 'post') }}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    @include('dashboard.partials.errors')
+                    @include('partials.errors')
                     <fieldset>
                         <div class="row">
                             <div class="col-xs-12">
@@ -54,6 +54,14 @@
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.app-setup.time_before_refresh') }}</label>
                                     <input type="number" name="app_refresh_rate" class="form-control" value="{{ Config::get('setting.app_refresh_rate', 0) }}" placeholder="{{ trans('forms.settings.app-setup.time_before_refresh') }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>{{ trans('forms.settings.app-setup.major_outage_rate') }}</label>
+                                    <input type="number" name="major_outage_rate" class="form-control" value="{{ Config::get('setting.major_outage_rate', 50) }}" placeholder="{{ trans('forms.settings.app-setup.major_outage_rate') }}">
                                 </div>
                             </div>
                         </div>

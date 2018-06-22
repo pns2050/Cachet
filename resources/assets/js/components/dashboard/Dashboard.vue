@@ -1,8 +1,11 @@
 <script>
+const Vue = require('vue');
+
 module.exports = {
-    props: ['welcome-user'],
+    props: ['user'],
     mounted () {
-        if (this.welcomeUser) {
+        if (!this.user.welcomed) {
+            // @todo Replace this with a non-jquery alternative.
             $('#welcome-modal').modal('show');
         }
     },
@@ -13,6 +16,10 @@ module.exports = {
         fetchSubscriberTimeline () {
             //
         }
+    },
+    components: {
+        'report-incident': require('./ReportIncident'),
+        'invite-team': require('./InviteTeam'),
     }
 }
 </script>
